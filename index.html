@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>乙蒜素中毒值班推演</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="case-stage" aria-live="polite">
+        <header class="topbar">
+          <div class="title-block">
+            <p class="eyebrow">急诊夜班 · 病例推演</p>
+            <h1>乙蒜素误服后的十小时</h1>
+          </div>
+        </header>
+
+        <section class="main-grid">
+          <section class="patient-disclosure">
+            <button
+              id="patientToggle"
+              class="patient-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="patientBoard"
+            >
+              <span>基础信息</span>
+              <strong id="patientSummary">男，62岁；口服乙蒜素约6-8 ml</strong>
+              <em id="patientToggleHint">点击展开生命体征和病例线索</em>
+            </button>
+
+            <aside id="patientBoard" class="patient-board" hidden>
+              <div class="monitor">
+                <div>
+                  <span>HR</span>
+                  <strong id="hrValue">99</strong>
+                </div>
+                <div>
+                  <span>BP</span>
+                  <strong id="bpValue">156/96</strong>
+                </div>
+                <div>
+                  <span>SpO₂</span>
+                  <strong id="spo2Value">96%</strong>
+                </div>
+                <div>
+                  <span>RR</span>
+                  <strong id="rrValue">20</strong>
+                </div>
+              </div>
+
+              <div class="timeline">
+                <h2>病例线索</h2>
+                <ul id="clues"></ul>
+              </div>
+            </aside>
+          </section>
+
+          <article class="story-panel">
+            <div class="scene-meta">
+              <span id="stepTag">接诊场景</span>
+              <span id="decisionHint">请选择下一步处理</span>
+            </div>
+            <h2 id="sceneTitle"></h2>
+            <p id="sceneText" class="scene-text"></p>
+
+            <div id="feedback" class="feedback" hidden></div>
+            <div id="choices" class="choices"></div>
+
+            <div class="actions">
+              <button id="backBtn" class="ghost-btn" type="button">上一步</button>
+              <button id="restartBtn" class="ghost-btn" type="button">重新推演</button>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
